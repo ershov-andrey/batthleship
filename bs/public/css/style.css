@@ -1,0 +1,272 @@
+html, body {
+    background-color: #aabfde;
+	margin: 0;
+	font-family: Roboto, 'Roboto', Tahoma;
+}
+
+#app { 
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#game {
+    width: 70%;
+    height: 100vh;
+    min-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    box-shadow: 0 0 0 3px #0000000f;
+}
+
+#panel {
+	flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #ccc;
+}
+
+#status {
+	height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    background-color: #dde3e8;
+    color: #527490;
+}
+
+#chat {
+	display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#messages-list {
+    width: 70%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#message-form {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#message-form  textarea {
+	width: 90%;
+	margin: 5%;
+	flex: 1;
+}
+
+#message-form button {
+	width: 90%;
+    height: 35px;
+    margin: 5%;
+}
+
+#messages-send {
+	width: 30%;
+    min-width: 200px;
+}
+
+#messages p {
+    background-color: #eee;
+    padding: 10px;
+    margin: 0 0 3px 0;
+}
+
+#game .players {
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: #e8f6ff;
+}
+
+#game .players .info {
+    width: 150px;
+    height: 350px;
+}
+
+#game .players .info .game-number-block {
+    height: 350px;
+    line-height: 350px;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: bottom;
+    color: #ccc;
+}
+
+#game .players .info .versus {
+    height: 50px;
+    margin: 15px 0;
+    line-height: 50px;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: bottom;
+    color: #ccc;
+}
+
+#game .player {
+	display: inline-block;
+	width: 350px;
+	height: 350px;
+	margin: 75px 0;
+	box-shadow: 0 0 0 2px #b0cae4;
+}
+
+#game .player .description {
+	font-size: 25px;
+	font-weight: 500;
+	color: #527490;
+	text-align: center;
+}
+
+#game .field {
+	width: 100%;
+	height: 100%;
+}
+
+#game  .field .row {
+	width: 100%;
+	height: 10%;
+}
+
+#game  .field .row .cell {
+	display: inline-block;
+	width: 10%;
+	height: 100%;
+	background-color: #fff;
+    box-shadow: inset 0 0 0 1px #b0cae4;
+}
+
+#game  .field .row .cell.ship {
+	background-color: #527490;
+	box-shadow: inset 0 0 0 1px #2d638a;
+}
+
+
+#game #enemy .row .cell {
+	cursor: pointer;
+	will-change: background-color;
+	transition: background-color 0.1s ease-out;
+}
+
+#game .row .cell:hover {
+    background-color: #c9e1f3;	
+}
+
+
+#game  .row .cell.shot,
+#game  .row .cell.shot:hover,
+#game  .row .cell.shot:active {
+	background-color: none;
+}
+
+
+#game  .row .cell.miss {
+	background-color: #ddd;
+}
+
+#game  .row .cell .shot {
+    width: 70%;
+    height: 70%;
+    background-image: url(/img/close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    margin: 15%;
+    border-radius: 10px;
+	cursor: default;
+}
+
+#game  .row .cell .miss {
+    width: 50%;
+    height: 50%;
+    background-color: #797979;
+    margin: 25%;
+    border-radius: 10px;
+}
+
+
+#game .field .row .cell.ship.shot,
+#game .row .cell.ship.shot,
+#game .row .cell.ship.shot:hover,
+#game  .row .cell.ship.shot:active {
+	cursor: default;
+	background-color: #981a1a;
+	box-shadow: inset 0 0 0 1px #981a1a;
+}
+
+#turn-status.alert-winner {
+    background-color: #79a974;
+    color: #fff;
+}
+
+#turn-status.alert-loser {
+    background-color: #ab3e3e;
+    color: #fff;
+}
+
+#turn-status a {
+	color: #ffffff;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#waiting-room {
+	width: 800px;
+    vertical-align: top;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+}
+
+#waiting-room p {
+    margin: 0;
+    padding: 5px 20px;
+    font-size: 36px;
+    font-weight: 300;
+    color: #46749a;
+    text-align: center;
+}
+
+#waiting-room .radar {
+	display: block;
+    padding: 10px 0 5px;
+    margin: 0 auto;
+    max-width: 350px;
+}
+
+#disconnected {
+	width: 800px;
+    vertical-align: top;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+}
+
+#disconnected p {
+	margin: 0;
+    padding: 15px 20px;
+    font-size: 36px;
+    font-weight: 500;
+    color: #ca6262;
+    text-align: center;
+}
+
+#disconnected .warning {
+	display: block;
+    padding: 10px 0 5px;
+    margin: 0 auto;
+    max-width: 350px;
+}
+

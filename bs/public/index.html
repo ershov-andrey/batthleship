@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Морской Бой</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,400,300,700,900&subset=latin,cyrillic" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=1000">
+</head>
+<body>
+
+<div id="app">
+
+	<!-- Дисконнект -->
+	<div id="disconnected">
+		<img src="/img/warning.svg" class="warning">
+		<p>СОЕДИНЕНИЕ С СЕРВЕРОМ ПОТЕРЯНО.</p>
+	</div>
+
+	<!-- Ожидание -->
+	<div id="waiting-room" style="display:none;">
+		<img src="/img/radar.png" class="radar">
+		<p>ВЫ ПОДКЛЮЧЕНЫ К СЕРВЕРУ.</p>
+		<p>РАДАР ИЩЕТ ВРАЖЕСКИЕ СУДНА...</p>
+	</div>
+
+	<!-- Игра -->
+	<div id="game" style="display:none;">
+		
+		<!-- Сетка игроков -->
+		<div class="players">
+		
+			<div class="player">
+				<div id="player" class="field"></div>
+				<h3 class="description">ВАШЕ ПОЛЕ</h3>
+			</div>
+			
+			<div class="info">
+				<div class="game-number-block">#<span id="game-number"></span></div>
+				<div class="versus">VS</div>
+			</div>
+			
+			<div class="player">
+				<div id="enemy" class="field"></div>
+				<h3 class="description">ПОЛЕ ПРОТВНИКА</h3>
+			</div>				
+		
+		</div>
+	
+		
+		<div id="panel">
+			<div id="status">
+				<div id="turn-status"></div>
+			</div>
+
+			<div id="chat">
+				<!-- Чат -->
+				<div id="messages-list">
+					<div id="messages"></div>
+				</div>
+
+				<!-- Отправить сообщение -->
+				<div id="messages-send">
+					<form id="message-form" action="">
+						<textarea id="message" class="form-control" autocomplete="off">Сдавайся!</textarea>
+						<button class="btn btn-primary">Отправить сообщение</button>
+					</form>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
+<script type="text/javascript" src="/js/game.js"></script>
+<script type="text/javascript" src="/js/client.js"></script>
+</body>
+</html>

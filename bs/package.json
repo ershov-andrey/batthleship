@@ -1,0 +1,13 @@
+{
+  "name": "Socket Project",
+  "version": "1",
+  "description": "Our Project for HSE",
+  "author": {
+    "name": "eawtf"
+  },
+  "dependencies": {
+    "express": "4.12.3",
+    "html-entities": "1.1.2",
+    "socket.io": "1.3.5"
+  }
+}
